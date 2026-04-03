@@ -12,5 +12,4 @@ public class UserResponseDto {
     private String email;
     private String phone;
     private LocalDateTime createdAt;
-
 }
