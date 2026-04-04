@@ -1,0 +1,7 @@
+CREATE TABLE orders (
+    id           BIGSERIAL PRIMARY KEY,
+    user_id      BIGINT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    total_amount DECIMAL(10,2) NOT NULL,
+    status       VARCHAR(50) DEFAULT 'PENDING',
+    created_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
