@@ -68,11 +68,11 @@ App Startup → Flyway checks flyway_schema_history table
 
 ## 🌱 Spring Profiles
 
-| Profile | Usage |
-|---------|-------|
-| `local` | Local development with local DB config |
-| `dev` | Development with RDS config |
-| `prod` | Production environment |
+| Profile | `ddl-auto` | Usage |
+|---------|-----------|-------|
+| `local` | `none` | Local development |
+| `dev` | `update` | Development with RDS |
+| `prod` | `validate` | Production environment |
 ```bash
 # Run with local profile
 mvn spring-boot:run -Dspring-boot.run.profiles=local
@@ -133,6 +133,7 @@ src/
 │   │   ├── exceptions/
 │   │   ├── repositories/
 │   │   └── services/
+│   │       └── impl/
 │   └── resources/
 │       ├── db/
 │       │   └── migration/
@@ -188,6 +189,7 @@ Flyway will automatically run all 8 migrations on startup! ✅
 | Seed data | Initial data via migration |
 | Multi-profile | local/dev/prod configurations |
 | `flyway_schema_history` | Migration tracking table |
+| Service interfaces | Clean architecture with impl pattern |
 
 > 💡 For mid-project Flyway integration approach, check the [`mid-project`](../../tree/mid-project) branch
 
@@ -205,8 +207,3 @@ Flyway will automatically run all 8 migrations on startup! ✅
 ## 👩‍💻 Developer
 
 **Mansi Arora** — Software Engineer
-
-
-
-
-
