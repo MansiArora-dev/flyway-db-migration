@@ -1,0 +1,2 @@
+ALTER TABLE orders ADD COLUMN coupon_code     VARCHAR(20);
+ALTER TABLE orders ADD COLUMN discount_amount DECIMAL(10,2) DEFAULT 0.00;
